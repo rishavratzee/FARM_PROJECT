@@ -1,0 +1,9 @@
+create a requirements.txt file and specify the dependencies needed.
+
+pip install pipenv
+
+pipenv shell
+
+pipenv install -r requirements.txt
+
+uvicorn main:app --reload
