@@ -7,3 +7,9 @@ pipenv shell
 pipenv install -r requirements.txt
 
 uvicorn main:app --reload
+
+--------------------------------------------
+
+npx create-react-app frontend
+
+npm install axios bootstrap

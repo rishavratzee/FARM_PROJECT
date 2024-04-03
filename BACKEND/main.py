@@ -14,7 +14,7 @@ from database import (
     delete_todo
 )
 
-origins = ['https://localhost:300']
+origins = ['https://localhost:3000']
 
 app.add_middleware(
     CORSMiddleware,
