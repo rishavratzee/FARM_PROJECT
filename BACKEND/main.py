@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 
-from BACKEND.model import Todo
+from model import Todo
 from database import (
     fetch_one_todo,
     fetch_all_todos,
@@ -38,8 +38,7 @@ async def get_todo_by_id(title):
     response = await get_todo_by_id(title)
     if response:
         return response
-    raise HTTPException(404, f"There is no Todo item with this title
-                        {title}")
+    raise HTTPException(404, "There is no Todo item with this title")
 
 @app.post("/api/todo", response_model=Todo)
 async def post_todo(todo:Todo):
@@ -53,13 +52,11 @@ async def put_todo(title: str, desc: str):
     response = await update_todo(title, desc)
     if response:
         return response
-    raise HTTPException(404, f"There is no Todo item with this title
-                        {title}")
+    raise HTTPException(404, "There is no Todo item with this title")
 
 @app.delete("/api/todo{title}")
 async def delete_todo(title : str):
     response = await delete_todo(title)
     if response:
         return "Succesfully deleted todo item !"
-    raise HTTPException(404, f"There is no Todo item with this title
-                        {title}")
+    raise HTTPException(404, "There is no Todo item with this title")
